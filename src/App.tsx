@@ -16,7 +16,7 @@ function App() {
   const onSubmit: SubmitHandler<FormInputs> = data => setInput(data.article)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/wiki/${input}`)
+    fetch(`${import.meta.env.VITE_API_URL}/wiki/${input}`)
       .then(response => response.json())
       .then(data => setArticle(data))
   }, [input])
